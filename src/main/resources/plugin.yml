@@ -1,0 +1,12 @@
+name: NikesBlessing
+version: 1.0
+main: wbe.nikesBlessing.NikesBlessing
+api-version: 1.21
+author: wbe
+softdeped: [PlaceholderAPI]
+depend: [McMMO]
+commands:
+  NikesBlessing:
+    description: Nike's Blessing main command
+    aliases: [nb, nikeb, nblessing]
+    permission: nikesblessing.command

@@ -1,0 +1,127 @@
+Messages:
+  noPermission: "&b[&cPrestigio&b] &eNo tienes permiso para hacer esto."
+  notEnoughArgs: "&b[&cPrestigio&b] &eNo has especificado suficientes argumentos."
+  reload: "&b[&cPrestigio&b] &eEl plugin se ha recargado con éxito."
+  prestigeUp: "&b[&cPrestigio&b] &eHas subido de prestigio en la habilidad %skill%."
+  prestigeDown: "&b[&cPrestigio&b] &eHas bajado de prestigio en la habilidad %skill%."
+  resetPrestige: "&b[&cPrestigio&b] &eHas perdido todo el prestigio de la habililidad %skill%."
+  resetPrestigeSender: "&b[&cPrestigio&b] &eHas eliminado todo el prestigio de la habilidad %skill% a %player%."
+  help:
+    - "&d&m -===- &b[&cPrestigio&b] &d&m-===-"
+    - "&b/nikesblessing &eMuestra esta página."
+    - "&b/nikesblessing prestige <Habilidad> [Jugador] &eSubir de prestigio en una habilidad."
+    - "&b/nikesblessing deprestige <Habilidad> [Jugador] &eDa una mascota a un jugador."
+    - "&b/nikesblessing reset <Habilidad> [Jugador] &eElimina el prestigio de una habilidad."
+    - "&b/nikesblessing reload &eRecarga la configuración del plugin."
+    - "&b"
+    - "&eLeyenda: &b<> &eObligatorio  &b[] &eOpcional"
+    - "&d&m -===- &b[&cPrestigio&b] &d&m-===-"
+
+Prestiges:
+  excavation:
+    maxPrestige: 10
+    effects:
+      addModifierScale:
+        attribute: mining_efficiency
+        multiplier: 0.05
+        lore: "&a+%value%%&7 de velocidad al picar"
+  fishing:
+    maxPrestige: 10
+    effects:
+      fishingSpeedMultiplier:
+        multiplier: 0.05
+        lore: "&a+%value%%&7 de velocidad de pesca"
+  herbalism:
+    maxPrestige: 10
+    effects:
+      saturationMultiplier:
+        multiplier: 0.1
+        lore: "&a+%value%%&7 de saturación al comer"
+  mining:
+    maxPrestige: 10
+    effects:
+      addModifierValue:
+        attribute: block_interaction_range
+        value: 0.2
+        lore: "&a+%value%&7 de rango de interacción con bloques"
+  woodcutting:
+    maxPrestige: 10
+    effects:
+      addModifierValue:
+        attribute: armor
+        value: 0.5
+        lore: "&a+%value%&7 de armadura"
+  archery:
+    maxPrestige: 10
+    effects:
+      addModifierValue:
+        attribute: luck
+        value: 0.5
+        lore: "&a+%value%&7 de suerte"
+  axes:
+    maxPrestige: 10
+    effects:
+      critMultiplier:
+        multiplier: 0.05
+        lore: "&a+%value%%&7 de daño en golpes críticos"
+  crossbows:
+    maxPrestige: 10
+    effects:
+      arrowSpeedMultiplier:
+        multiplier: 0.05
+        lore: "&a+%value%%&7 de velocidad a las flechas"
+  maces:
+    maxPrestige: 10
+    effects:
+      addModifierScale:
+        attribute: attack_damage
+        multiplier: 0.02
+        lore: "&a+%value%%&7 de daño"
+  swords:
+    maxPrestige: 10
+    effects:
+      addModifierValue:
+        attribute: attack_damage
+        value: 0.5
+        lore: "&a+%value%&7 de daño"
+  taming:
+    maxPrestige: 10
+    effects:
+      doubleDamage:
+        chance: 2
+        lore: "&a+%value%%&7 de golpear dos veces"
+  tridents:
+    maxPrestige: 10
+    effects:
+      underwaterDamageMultiplier:
+        multiplier: 2
+        lore: "&a+%value%%&7 de daño bajo el agua"
+  unarmed:
+    maxPrestige: 10
+    effects:
+      addModifierScale:
+        attribute: attack_speed
+        multiplier: 0.02
+        lore: "&a+%value%%&7 de velocidad de ataque"
+  acrobatics:
+    maxPrestige: 10
+    effects:
+      dodge:
+        chance: 1.5
+        lore: "&a+%value%%&7 de esquivar"
+  alchemy:
+    maxPrestige: 10
+    effects:
+      potionDurationMultiplier:
+        multiplier: 0.1
+        lore: "&a+%value%%&7 de duración de pociones"
+      addModifierValue:
+        attribute: max_health
+        value: 1
+        lore: "&a+%value%&7 de vida máxima"
+  repair:
+    maxPrestige: 10
+    effects:
+      durability:
+        chance: 1
+        lore: "&a+%value%%&7 de no gastar usos"
