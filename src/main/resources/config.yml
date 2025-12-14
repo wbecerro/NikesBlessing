@@ -23,19 +23,19 @@ Prestiges:
     effects:
       addModifierScale:
         attribute: mining_efficiency
-        multiplier: 0.05
+        value: 0.05
         lore: "&a+%value%%&7 de velocidad al picar"
   fishing:
     maxPrestige: 10
     effects:
       fishingSpeedMultiplier:
-        multiplier: 0.05
+        value: 0.05
         lore: "&a+%value%%&7 de velocidad de pesca"
   herbalism:
     maxPrestige: 10
     effects:
       saturationMultiplier:
-        multiplier: 0.1
+        value: 0.1
         lore: "&a+%value%%&7 de saturación al comer"
   mining:
     maxPrestige: 10
@@ -62,20 +62,20 @@ Prestiges:
     maxPrestige: 10
     effects:
       critMultiplier:
-        multiplier: 0.05
+        value: 0.05
         lore: "&a+%value%%&7 de daño en golpes críticos"
   crossbows:
     maxPrestige: 10
     effects:
       arrowSpeedMultiplier:
-        multiplier: 0.05
+        value: 0.05
         lore: "&a+%value%%&7 de velocidad a las flechas"
   maces:
     maxPrestige: 10
     effects:
       addModifierScale:
         attribute: attack_damage
-        multiplier: 0.02
+        value: 0.02
         lore: "&a+%value%%&7 de daño"
   swords:
     maxPrestige: 10
@@ -88,32 +88,32 @@ Prestiges:
     maxPrestige: 10
     effects:
       doubleDamage:
-        chance: 2
+        value: 2
         lore: "&a+%value%%&7 de golpear dos veces"
   tridents:
     maxPrestige: 10
     effects:
       underwaterDamageMultiplier:
-        multiplier: 2
+        value: 0.02
         lore: "&a+%value%%&7 de daño bajo el agua"
   unarmed:
     maxPrestige: 10
     effects:
       addModifierScale:
         attribute: attack_speed
-        multiplier: 0.02
+        value: 0.02
         lore: "&a+%value%%&7 de velocidad de ataque"
   acrobatics:
     maxPrestige: 10
     effects:
       dodge:
-        chance: 1.5
+        value: 1.5
         lore: "&a+%value%%&7 de esquivar"
   alchemy:
     maxPrestige: 10
     effects:
       potionDurationMultiplier:
-        multiplier: 0.1
+        value: 0.1
         lore: "&a+%value%%&7 de duración de pociones"
       addModifierValue:
         attribute: max_health
@@ -123,5 +123,5 @@ Prestiges:
     maxPrestige: 10
     effects:
       durability:
-        chance: 1
+        value: 1
         lore: "&a+%value%%&7 de no gastar usos"

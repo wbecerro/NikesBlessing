@@ -26,5 +26,7 @@ public class CommandListener implements CommandExecutor {
                 }
             }
         }
+
+        return  true;
     }
 }
