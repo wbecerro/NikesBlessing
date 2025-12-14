@@ -6,6 +6,9 @@ Messages:
   prestigeDown: "&b[&cPrestigio&b] &eHas bajado de prestigio en la habilidad %skill%."
   resetPrestige: "&b[&cPrestigio&b] &eHas perdido todo el prestigio de la habililidad %skill%."
   resetPrestigeSender: "&b[&cPrestigio&b] &eHas eliminado todo el prestigio de la habilidad %skill% a %player%."
+  prestigeBroadcast: "¡%player% ha subido al prestigio %level% en la habilidad %skill%!"
+  maxPrestigeReached: "&b[&cPrestigio&b] &eNo se puede subir más el prestigio de esa habilidad."
+  notEnoughLevels: "&b[&cPrestigio&b] &eNo tienes suficientes niveles para subir de prestigio."
   help:
     - "&d&m -===- &b[&cPrestigio&b] &d&m-===-"
     - "&b/nikesblessing &eMuestra esta página."

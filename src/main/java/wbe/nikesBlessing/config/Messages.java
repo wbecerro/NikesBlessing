@@ -15,6 +15,9 @@ public class Messages {
     public String prestigeDown;
     public String resetPrestige;
     public String resetPrestigeSender;
+    public String prestigeBroadcast;
+    public String notEnoughLevels;
+    public String maxPrestigeReached;
     public List<String> help;
 
     public Messages(FileConfiguration config) {
@@ -27,6 +30,9 @@ public class Messages {
         prestigeDown = config.getString("Messages.prestigeDown").replace("&", "§");
         resetPrestige = config.getString("Messages.resetPrestige").replace("&", "§");
         resetPrestigeSender = config.getString("Messages.resetPrestigeSender").replace("&", "§");
+        prestigeBroadcast = config.getString("Messages.prestigeBroadcast").replace("&", "§");
+        notEnoughLevels = config.getString("Messages.notEnoughLevels").replace("&", "§");
+        maxPrestigeReached = config.getString("Messages.maxPrestigeReached").replace("&", "§");
         help = config.getStringList("Messages.help");
     }
 }

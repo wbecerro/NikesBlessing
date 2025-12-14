@@ -59,9 +59,32 @@ public class PlayerPrestige {
             return false;
         }
 
+        prestigeLevel = newLevel;
+
         deactivate();
         activate();
 
         return true;
+    }
+
+    public boolean levelDown() {
+        int newLevel = prestigeLevel - 1;
+        if(newLevel < 0) {
+            newLevel = 0;
+        }
+
+        prestigeLevel = newLevel;
+
+        deactivate();
+        activate();
+
+        return true;
+    }
+
+    public void reset() {
+        prestigeLevel = 0;
+
+        deactivate();
+        activate();
     }
 }
