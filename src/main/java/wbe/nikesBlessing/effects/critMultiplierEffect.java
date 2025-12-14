@@ -1,5 +1,6 @@
 package wbe.nikesBlessing.effects;
 
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
@@ -17,6 +18,14 @@ public class critMultiplierEffect extends PrestigeEffect {
         }
 
         if(prestige.getPrestigeLevel() < 1) {
+            return;
+        }
+
+        if(!(damageEvent.getDamager() instanceof Player)) {
+            return;
+        }
+
+        if(!(damageEvent.getEntity() instanceof LivingEntity)) {
             return;
         }
 

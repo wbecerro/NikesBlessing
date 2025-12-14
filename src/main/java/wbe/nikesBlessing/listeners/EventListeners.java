@@ -11,5 +11,11 @@ public class EventListeners {
 
         pluginManager.registerEvents(new PlayerJoinListeners(), plugin);
         pluginManager.registerEvents(new PlayerQuitListeners(), plugin);
+        pluginManager.registerEvents(new EntityDamageListeners(), plugin);
+        pluginManager.registerEvents(new FoodLevelChangeListeners(), plugin);
+        pluginManager.registerEvents(new PlayerFishListeners(), plugin);
+        pluginManager.registerEvents(new PlayerItemConsumeListeners(), plugin);
+        pluginManager.registerEvents(new PlayerItemDamageListeners(), plugin);
+        pluginManager.registerEvents(new ProjectileLaunchListeners(), plugin);
     }
 }

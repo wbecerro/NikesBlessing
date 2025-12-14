@@ -21,6 +21,10 @@ public class fishingSpeedMultiplierEffect extends PrestigeEffect {
             return;
         }
 
+        if(!fishEvent.getState().equals(PlayerFishEvent.State.FISHING)) {
+            return;
+        }
+
         double value = 1 - this.value * prestige.getPrestigeLevel();
         FishHook hook = fishEvent.getHook();
 
