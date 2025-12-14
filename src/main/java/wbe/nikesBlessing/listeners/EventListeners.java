@@ -9,5 +9,7 @@ public class EventListeners {
         NikesBlessing plugin = NikesBlessing.getInstance();
         PluginManager pluginManager = plugin.getServer().getPluginManager();
 
+        pluginManager.registerEvents(new PlayerJoinListeners(), plugin);
+        pluginManager.registerEvents(new PlayerQuitListeners(), plugin);
     }
 }

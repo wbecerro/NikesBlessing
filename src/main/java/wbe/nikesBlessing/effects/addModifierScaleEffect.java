@@ -26,6 +26,10 @@ public class addModifierScaleEffect extends PrestigeEffect {
             return;
         }
 
+        if(prestige.getPrestigeLevel() < 1) {
+            return;
+        }
+
         double attributeValue = value * prestige.getPrestigeLevel();
         AttributeModifier attributeModifier = new AttributeModifier(attributeKey, attributeValue,
                 AttributeModifier.Operation.ADD_SCALAR, EquipmentSlotGroup.ANY);
@@ -39,6 +43,10 @@ public class addModifierScaleEffect extends PrestigeEffect {
 
     public void deactivateEffect(Player player, PlayerPrestige prestige, Event event) {
         if(event != null) {
+            return;
+        }
+
+        if(prestige.getPrestigeLevel() < 1) {
             return;
         }
 

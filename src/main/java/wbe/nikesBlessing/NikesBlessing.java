@@ -1,15 +1,21 @@
 package wbe.nikesBlessing;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import wbe.nikesBlessing.commands.CommandListener;
 import wbe.nikesBlessing.commands.TabListener;
 import wbe.nikesBlessing.config.Config;
 import wbe.nikesBlessing.config.Messages;
+import wbe.nikesBlessing.config.PlayerPrestige;
 import wbe.nikesBlessing.listeners.EventListeners;
 import wbe.nikesBlessing.utils.Utilities;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public final class NikesBlessing extends JavaPlugin {
 
@@ -26,6 +32,8 @@ public final class NikesBlessing extends JavaPlugin {
     public static Messages messages;
 
     public static Utilities utilities;
+
+    public static HashMap<Player, List<PlayerPrestige>> playerPrestiges = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -44,6 +52,9 @@ public final class NikesBlessing extends JavaPlugin {
     @Override
     public void onDisable() {
         reloadConfig();
+        for(Player player : playerPrestiges.keySet()) {
+            utilities.savePlayerData(player);
+        }
         getLogger().info("Nike's Blessing disabled correctly.");
     }
 
@@ -56,11 +67,17 @@ public final class NikesBlessing extends JavaPlugin {
             saveDefaultConfig();
         }
         new File(getDataFolder(), "saves").mkdir();
+        for(Player player : playerPrestiges.keySet()) {
+            utilities.savePlayerData(player);
+        }
 
         reloadConfig();
         configuration = getConfig();
         config = new Config(configuration);
         messages = new Messages(configuration);
         utilities = new Utilities();
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            utilities.loadPlayerData(player);
+        }
     }
 }

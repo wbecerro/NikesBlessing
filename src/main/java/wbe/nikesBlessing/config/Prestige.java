@@ -7,16 +7,27 @@ import java.util.List;
 
 public class Prestige {
 
+    private String id;
+
     private PrimarySkillType skill;
 
     private int maxPrestige;
 
     private List<PrestigeEffect> effects;
 
-    public Prestige(PrimarySkillType skill, int maxPrestige, List<PrestigeEffect> effects) {
+    public Prestige(String id, PrimarySkillType skill, int maxPrestige, List<PrestigeEffect> effects) {
+        this.id = id;
         this.skill = skill;
         this.maxPrestige = maxPrestige;
         this.effects = effects;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public PrimarySkillType getSkill() {

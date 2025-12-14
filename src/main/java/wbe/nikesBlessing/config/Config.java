@@ -28,7 +28,7 @@ public class Config {
             PrimarySkillType skill = PrimarySkillType.valueOf(configPrestige.toUpperCase());
             int maxPrestige = config.getInt("Prestiges." + configPrestige + ".maxPrestige");
             List<PrestigeEffect> effects = loadEffects(configPrestige);
-            prestiges.put(configPrestige, new Prestige(skill, maxPrestige, effects));
+            prestiges.put(configPrestige, new Prestige(configPrestige, skill, maxPrestige, effects));
         }
     }
 
