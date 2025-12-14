@@ -10,10 +10,10 @@ import wbe.nikesBlessing.config.Config;
 import wbe.nikesBlessing.config.Messages;
 import wbe.nikesBlessing.config.PlayerPrestige;
 import wbe.nikesBlessing.listeners.EventListeners;
+import wbe.nikesBlessing.papi.PapiExtension;
 import wbe.nikesBlessing.utils.Utilities;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,6 +27,8 @@ public final class NikesBlessing extends JavaPlugin {
 
     private EventListeners eventListeners;
 
+    private PapiExtension papiExtension;
+
     public static Config config;
 
     public static Messages messages;
@@ -37,6 +39,10 @@ public final class NikesBlessing extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            papiExtension = new PapiExtension();
+            papiExtension.register();
+        }
         saveDefaultConfig();
         getLogger().info("Nike's Blessing enabled correctly.");
         reloadConfiguration();

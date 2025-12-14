@@ -11,9 +11,11 @@ import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 import wbe.nikesBlessing.NikesBlessing;
 import wbe.nikesBlessing.config.PlayerPrestige;
 import wbe.nikesBlessing.config.Prestige;
+import wbe.nikesBlessing.events.PlayerPrestigeEvent;
 
 import java.io.File;
 import java.io.IOException;
@@ -129,6 +131,9 @@ public class Utilities {
                 .replace("%level%", String.valueOf(prestige.getPrestigeLevel()))
                 .replace("%skill%", LocaleLoader.getString(
                         StringUtils.getCapitalized(prestige.getPrestige().getId()) + ".SkillName")));
+
+        NikesBlessing.getInstance().getServer().getPluginManager()
+                .callEvent(new PlayerPrestigeEvent(player, prestige.getPrestige(), 1));
     }
 
     public void levelDownPrestige(Player player, PlayerPrestige prestige) {
@@ -138,6 +143,9 @@ public class Utilities {
         }
 
         prestige.levelDown();
+
+        NikesBlessing.getInstance().getServer().getPluginManager()
+                .callEvent(new PlayerPrestigeEvent(player, prestige.getPrestige(), -1));
     }
 
     public void resetPrestige(Player player, PlayerPrestige prestige) {
@@ -146,6 +154,11 @@ public class Utilities {
             return;
         }
 
+        int level = prestige.getPrestigeLevel() * -1;
+
         prestige.reset();
+
+        NikesBlessing.getInstance().getServer().getPluginManager()
+                .callEvent(new PlayerPrestigeEvent(player, prestige.getPrestige(), level));
     }
 }
