@@ -31,6 +31,9 @@ public class PapiExtension extends PlaceholderExpansion {
         if(params.contains("prestigelevel")) {
             String skillName = params.replace("prestigelevel", "");
             return String.valueOf(NikesBlessing.utilities.searchPrestige(player.getPlayer(), skillName).getPrestigeLevel());
+        } else if(params.contains("prestigemaxlevel")) {
+            String skillName = params.replace("prestigemaxlevel", "");
+            return String.valueOf(NikesBlessing.config.prestiges.get(skillName).getMaxPrestige());
         }
 
         return null;

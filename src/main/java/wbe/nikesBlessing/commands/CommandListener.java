@@ -40,9 +40,11 @@ public class CommandListener implements CommandExecutor {
                 }
 
                 PlayerPrestige prestige = NikesBlessing.utilities.searchPrestige(player, skill);
-                NikesBlessing.utilities.levelUpPrestige(player, prestige);
-                player.sendMessage(NikesBlessing.messages.prestigeUp.replace("%skill%", LocaleLoader.getString(
-                        StringUtils.getCapitalized(skill) + ".SkillName")));
+                boolean ok = NikesBlessing.utilities.levelUpPrestige(player, prestige);
+                if(ok) {
+                    player.sendMessage(NikesBlessing.messages.prestigeUp.replace("%skill%", LocaleLoader.getString(
+                            StringUtils.getCapitalized(skill) + ".SkillName")));
+                }
             } else if(args[0].equalsIgnoreCase("deprestige")) {
                 if(!sender.hasPermission("nikesblessing.command.deprestige")) {
                     sender.sendMessage(NikesBlessing.messages.noPermission);

@@ -108,21 +108,21 @@ public class Utilities {
         return null;
     }
 
-    public void levelUpPrestige(Player player, PlayerPrestige prestige) {
+    public boolean levelUpPrestige(Player player, PlayerPrestige prestige) {
         McMMOPlayer mcMMOPlayer = UserManager.getPlayer(player);
         if(mcMMOPlayer == null) {
-            return;
+            return false;
         }
 
         int skillLevel = mcMMOPlayer.getSkillLevel(prestige.getPrestige().getSkill());
         if(skillLevel < 1000) {
             player.sendMessage(NikesBlessing.messages.notEnoughLevels);
-            return;
+            return false;
         }
 
         if(!prestige.levelUp()) {
             player.sendMessage(NikesBlessing.messages.maxPrestigeReached);
-            return;
+            return false;
         }
 
         mcMMOPlayer.modifySkill(prestige.getPrestige().getSkill(), skillLevel - 1000);
@@ -134,6 +134,8 @@ public class Utilities {
 
         NikesBlessing.getInstance().getServer().getPluginManager()
                 .callEvent(new PlayerPrestigeEvent(player, prestige.getPrestige(), 1));
+
+        return true;
     }
 
     public void levelDownPrestige(Player player, PlayerPrestige prestige) {
