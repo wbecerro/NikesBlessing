@@ -11,6 +11,7 @@ import wbe.nikesBlessing.config.Messages;
 import wbe.nikesBlessing.config.PlayerPrestige;
 import wbe.nikesBlessing.listeners.EventListeners;
 import wbe.nikesBlessing.papi.PapiExtension;
+import wbe.nikesBlessing.utils.Scheduler;
 import wbe.nikesBlessing.utils.Utilities;
 
 import java.io.File;
@@ -53,10 +54,12 @@ public final class NikesBlessing extends JavaPlugin {
         getCommand("nikesblessing").setTabCompleter(tabListener);
         eventListeners = new EventListeners();
         eventListeners.initializeListeners();
+        Scheduler.startSchedulers();
     }
 
     @Override
     public void onDisable() {
+        getServer().getScheduler().cancelTasks(this);
         reloadConfig();
         for(Player player : playerPrestiges.keySet()) {
             utilities.savePlayerData(player);
