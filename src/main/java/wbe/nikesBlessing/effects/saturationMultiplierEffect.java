@@ -1,5 +1,6 @@
 package wbe.nikesBlessing.effects;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
@@ -26,6 +27,9 @@ public class saturationMultiplierEffect extends PrestigeEffect {
         double value = this.value * prestige.getPrestigeLevel() + 1;
 
         ItemStack food = foodEvent.getItem();
+        if(food == null) {
+            return;
+        }
         ItemMeta foodMeta = food.getItemMeta();
         FoodComponent foodComponent = foodMeta.getFood();
         foodComponent.setSaturation((float) (foodComponent.getSaturation() * value));
