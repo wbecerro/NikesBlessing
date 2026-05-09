@@ -30,11 +30,10 @@ public class saturationMultiplierEffect extends PrestigeEffect {
         if(food == null) {
             return;
         }
+
         ItemMeta foodMeta = food.getItemMeta();
         FoodComponent foodComponent = foodMeta.getFood();
-        foodComponent.setSaturation((float) (foodComponent.getSaturation() * value));
-        foodMeta.setFood(foodComponent);
-        food.setItemMeta(foodMeta);
+        player.setSaturation((float) (foodComponent.getSaturation() * value));
     }
 
     public void deactivateEffect(Player player, PlayerPrestige prestige, Event event) {

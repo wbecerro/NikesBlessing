@@ -86,6 +86,8 @@ public class CommandListener implements CommandExecutor {
 
                 NikesBlessing.getInstance().reloadConfiguration();
                 sender.sendMessage(NikesBlessing.messages.reload);
+            } else if(args[0].equalsIgnoreCase("test")) {
+                sender.sendMessage("Saturación: " + player.getSaturation());
             }
         }
 
